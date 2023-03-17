@@ -54,10 +54,10 @@ PostToSlack() {
         fi
 
         # Bypass certification verification if needed
-        if [[ -z "${TURN_OFF_CERT_VERIFICATION}" ]]; then
-            SLACK_SENT_RESPONSE=$(curl -k -s -f -X POST -H 'Content-type: application/json' -H "Authorization: Bearer $SLACK_ACCESS_TOKEN" --data "$SLACK_MSG_BODY" https://slack.com/api/chat.postMessage)
-        else
+        if [ -z ${TURN_OFF_CERT_VERIFICATION+x} ]; then
             SLACK_SENT_RESPONSE=$(curl -s -f -X POST -H 'Content-type: application/json' -H "Authorization: Bearer $SLACK_ACCESS_TOKEN" --data "$SLACK_MSG_BODY" https://slack.com/api/chat.postMessage)
+        else
+            SLACK_SENT_RESPONSE=$(curl -k -s -f -X POST -H 'Content-type: application/json' -H "Authorization: Bearer $SLACK_ACCESS_TOKEN" --data "$SLACK_MSG_BODY" https://slack.com/api/chat.postMessage)
         fi
         
         if [ "$SLACK_PARAM_DEBUG" -eq 1 ]; then
