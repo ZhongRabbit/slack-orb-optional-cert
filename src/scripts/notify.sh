@@ -52,14 +52,14 @@ PostToSlack() {
             echo "The message body being sent to Slack can be found below. To view redacted values, rerun the job with SSH and access: ${SLACK_MSG_BODY_LOG}"
             echo "$SLACK_MSG_BODY"
         fi
-
+        
         # Bypass certification verification if needed
         if [ -z ${TURN_OFF_CERT_VERIFICATION+x} ]; then
             SLACK_SENT_RESPONSE=$(curl -s -f -X POST -H 'Content-type: application/json' -H "Authorization: Bearer $SLACK_ACCESS_TOKEN" --data "$SLACK_MSG_BODY" https://slack.com/api/chat.postMessage)
         else
             SLACK_SENT_RESPONSE=$(curl -k -s -f -X POST -H 'Content-type: application/json' -H "Authorization: Bearer $SLACK_ACCESS_TOKEN" --data "$SLACK_MSG_BODY" https://slack.com/api/chat.postMessage)
         fi
-        
+
         if [ "$SLACK_PARAM_DEBUG" -eq 1 ]; then
             printf "%s\n" "$SLACK_SENT_RESPONSE" > "$SLACK_SENT_RESPONSE_LOG"
             echo "The response from the API call to Slack can be found below. To view redacted values, rerun the job with SSH and access: ${SLACK_SENT_RESPONSE_LOG}"
@@ -202,8 +202,7 @@ SanitizeVars() {
 
   # Extract the variable names from the matches.
   local variable_names
-  variable_names="$(printf '%s\n' "$variables" | grep -o -E '[a-zA-Z0-9_]+' || true)"
-  [ -z "$variable_names" ] && { printf '%s\n' "Nothing to sanitize."; return 0; }
+  variable_names="$(printf '%s\n' "$variables" | grep -o -E '[a-zA-Z0-9_]+')"
 
   # Find out what OS we're running on.
   detect_os
