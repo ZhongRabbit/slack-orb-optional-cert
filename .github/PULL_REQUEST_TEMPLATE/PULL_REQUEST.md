@@ -1,25 +1,33 @@
-## PR Type
-What kind of change does this PR introduce?
 
-<!-- Please check the one that applies to this PR using "x". -->
-- [ ] Bugfix
-- [ ] Feature
-- [ ] Code style update (formatting)
-- [ ] Refactoring (no functional changes)
-- [ ] CI related changes
-- [ ] Other... Please describe:
+**SEMVER Update Type:**
+- [ ] Major
+- [ ] Minor
+- [ ] Patch
 
-## What is the current behavior?
-<!-- Please describe the current behavior that you are modifying, or link to a relevant issue. -->
+## Description:
 
-Issue Number: N/A
+<!---
+  Describe your changes in detail, preferably in an imperative mood,
+  i.e., "add `commandA` to `jobB`"
+ -->
 
-## What is the new behavior?
+## Motivation:
 
-## Does this PR introduce a breaking change?
-- [ ] Yes
-- [ ] No
+<!---
+  Share any open issues this PR references or otherwise describe the motivation to submit this pull request.
+ -->
 
-<!-- If this PR contains a breaking change, please describe the impact and migration path for existing applications below. -->
+ **Closes Issues:**
+-  ISSUE URL
 
-## Other information
+## Checklist:
+
+<!--
+	Thank you for contributing to CircleCI Orbs!
+	before submitting your a request, please go through the following
+	items and place an x in the [ ] if they have been completed
+-->
+
+- [ ] All new jobs, commands, executors, parameters have descriptions.
+- [ ] Usage Example version numbers have been updated.
+- [ ] Changelog has been updated.
