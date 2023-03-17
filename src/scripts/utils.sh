@@ -21,5 +21,5 @@ detect_os() {
       ;;
   esac
 
-  export readonly PLATFORM
+  export PLATFORM
 }
