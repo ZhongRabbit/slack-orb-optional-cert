@@ -1,18 +1,9 @@
 # Orb Template
 
 
-[![CircleCI Build Status](https://circleci.com/gh/ZhongRabbit/slack-orb-optional-cert.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/ZhongRabbit/slack-orb-optional-cert) [![CircleCI Orb Version](https://badges.circleci.com/orbs/slm-zhong/slack-orb-optional-cert.svg)](https://circleci.com/orbs/registry/orb/slm-zhong/slack-orb-optional-cert) [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/ZhongRabbit/slack-orb-optional-cert/master/LICENSE) [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
+This is [slack-orb](https://github.com/CircleCI-Public/slack-orb) (v4.12.1) but w/ the ability to bypass certificate verification by setting the `TURN_OFF_CERT_VERIFICATION` environment variable.
 
-
-
-A project template for Orbs.
-
-This repository is designed to be automatically ingested and modified by the CircleCI CLI's `orb init` command.
-
-_**Edit this area to include a custom title and description.**_
-
----
-
+--
 ## Resources
 
 [CircleCI Orb Registry Page](https://circleci.com/orbs/registry/orb/slm-zhong/slack-orb-optional-cert) - The official registry page of this orb for all versions, executors, commands, and jobs described.
