@@ -1,7 +1,7 @@
 version: 2.1
 
 description: >
-  This is [slack-orb](https://github.com/CircleCI-Public/slack-orb) (v4.12.0) but w/ the ability to bypass certificate verification by setting the `TURN_OFF_CERT_VERIFICATION` environment variable.
+  This is the slack-orb v4.12.0 (https://github.com/CircleCI-Public/slack-orb) but w/ the ability to bypass certificate verification by setting the `TURN_OFF_CERT_VERIFICATION` environment variable.
   Implement event-based notifications across all of your CI/CD pipelines. Utilizing built-in message templates or Slack's visual Block-Kit builder, create and customize notifications specific to your organization's needs.
   Supports Linux x86_64, MacOS, and Arm64 V8.
 
