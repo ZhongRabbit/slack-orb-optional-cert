@@ -1,7 +1,7 @@
 # Orb Template
 
 
-This is [slack-orb](https://github.com/CircleCI-Public/slack-orb) (v4.12.1) but w/ the ability to bypass certificate verification by setting the `TURN_OFF_CERT_VERIFICATION` environment variable.
+This is [slack-orb](https://github.com/CircleCI-Public/slack-orb) (v4.12.0) but w/ the ability to bypass certificate verification by setting the `TURN_OFF_CERT_VERIFICATION` environment variable.
 
 --
 ## Resources
