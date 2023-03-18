@@ -221,11 +221,16 @@ SanitizeVars() {
     sanitized_value="$(printf '%s' "$sanitized_value" | awk '{gsub(/\\/, "&\\"); print $0}')"
     # Escape newlines.
     sanitized_value="$(printf '%s' "$sanitized_value" | awk 'NR > 1 { printf("\\n") } { printf("%s", $0) }')"
-    # Escape double quotes.
-    if [ "$PLATFORM" = "windows" ]; then
-        sanitized_value="$(printf '%s' "$sanitized_value" | awk '{gsub(/"/, "\\\""); print $0}')"
+
+    if [ -z ${BYPASS_DOUBLE_QUOTE_ESCAPE+x} ]; then
+        printf "Bypass double quote escape"
     else
-        sanitized_value="$(printf '%s' "$sanitized_value" | awk '{gsub(/\"/, "\\\""); print $0}')"
+        # Escape double quotes.
+        if [ "$PLATFORM" = "windows" ]; then
+            sanitized_value="$(printf '%s' "$sanitized_value" | awk '{gsub(/"/, "\\\""); print $0}')"
+        else
+            sanitized_value="$(printf '%s' "$sanitized_value" | awk '{gsub(/\"/, "\\\""); print $0}')"
+        fi
     fi
 
     # Write the sanitized value back to the original variable.
