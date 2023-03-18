@@ -224,7 +224,7 @@ SanitizeVars() {
 
     if [ -z ${BYPASS_DOUBLE_QUOTE_ESCAPE+x} ]; then
         printf "Bypass double quote escape"
-    else:
+    else
         # Escape double quotes.
         if [ "$PLATFORM" = "windows" ]; then
             sanitized_value="$(printf '%s' "$sanitized_value" | awk '{gsub(/"/, "\\\""); print $0}')"
